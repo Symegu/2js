@@ -1,0 +1,206 @@
+<button>OK</button>
+<script>
+//    2 ** 3
+//    var mas = [];
+//    var obj = {a:1,b:2};
+//    mas.push(obj.a);
+//    mas.push(obj.b);
+//    mas = Object.values(obj);
+//    console.log(mas);
+    
+//    Отличия между let и var
+//    var a = 1;
+//    if(1){
+//        var a = 2;
+//        console.log(a);
+//    }
+//    console.log(a);
+//    let a = 1;
+//    if(1){
+//        let a = 2;
+//        console.log(a);
+//    }
+//    if(1){
+//       a = 5;
+//       console.log(a);
+//    }
+//    console.log(a);
+    
+//    let i = 1;
+//    for(let i = 0;i < 3;i++){
+//        console.log(i);
+//    }
+//    console.log(i);
+    
+//   const TEST = 10; 
+//    var TEST = 123;
+    
+//    Template literals
+    
+//    let firstName = "Иван";
+//    let lastName = "Иванов";
+//    let year = 1990;
+//    
+//    function getAge(y){
+//        let date = new Date(); //создали объект класса Date
+//        return date.getFullYear() - y;
+//    }
+//    
+//    const FIO = `${firstName} ${lastName}, рожденный в ${year}, ему ${getAge(year)}\n`;
+////    console.log(FIO);
+    
+//     Строковые методы
+//    console.log(FIO);
+//    console.log(FIO.indexOf("Иванов"));
+//    console.log(FIO.endsWith("31"))
+//    console.log(FIO.repeat(5))
+   
+    
+//    Стрелочные функции
+    
+//   const sum = function(a,b){
+//       return a + b;
+//   } 
+    
+//   alert(sum(2,3));
+    
+//    const f = (a,b) => a + b;
+//    alert(f(2,3));
+    
+//    const sum = (a,b = 1)=>{
+//        a = +a;
+//        if(!isNaN(a)){
+//            console.log(a + b);
+//        }
+//    }
+//    sum("sdfsdf");
+    
+//    let mas = ["PHP","Java","JS"];
+//    mas.forEach((item,i) => console.log(`${i}:${item}`));
+    
+//    Метод arr.map(func) - используется для трансформации масссива в другой массива. То есть он создает
+//    новый массив, который будет состоять из результатов функции func
+    
+//    let lengthMas = mas.map(item => item.length);
+//    console.log(lengthMas);
+    
+//    let newArr = mas.filter(item => item.length > 2);
+//    console.log(newArr);
+//    
+//    let index = mas.find(item => item.length > 2);
+//    console.log(index);
+    
+//   let box = {
+//       color: 'green',
+//       position: 5,
+//       clickMe: function(){
+//           document.querySelector("button").addEventListener("click",function(){
+//               console.log(this);
+//               console.log(`Контейнер цветом ${this.color} имеет номер ${this.position}`);
+//           });
+//       }
+//   } 
+    
+//       let box = {
+//       color: 'green',
+//       position: 5,
+//       clickMe: function(){
+//           document.querySelector("button").addEventListener("click",(e)=>{
+//               e.target.style.color = "red";
+//               console.log(this);
+//               console.log(`Контейнер цветом ${this.color} имеет номер ${this.position}`);
+//           });
+//       }
+//   } 
+//    
+//   box.clickMe(); 
+    
+//    Стрелочные функции не создают собственного контекста, а используют конектс родителя
+    
+    
+  //Деструктуризация - это механизм, который позволяет извлечь части из составных данных. Цель
+//    это уменьшение количества кода
+    
+//    let mas = ["Иван",30];
+//    let name = mas[0];
+//    let age = mas[1];
+//    let [name,age] = mas;
+//    console.log(`${name} - ${age}`);
+    
+    let obj = {
+        firstName: "Петр",
+        lastName: "Петров",
+        professions: ["Программист","Математик"]
+    }
+    
+    let {firstName: name,lastName,professions:[p1,p2]} = obj;
+    
+    console.log(`${name} ${lastName} имеет профессии ${p1}, ${p2}`);
+    
+//    let a = 1;
+//    let b = 2;
+//    [a,b] = [b,a];
+    
+    
+//    let info = year => {
+//        let age = new Date().getFullYear() - year;
+//        return [age, 65 - age];
+//    }
+//    
+//    let [age, leftWork] = info(1990);
+//    console.log(`Пользователю ${age} лет, до пенсии осталось работать ${leftWork}`);
+//    
+//    function f(){
+//       console.log(arguments); 
+//    }
+//    f(1,2,3);
+    
+    
+//    Операторы REST и SPREAD
+//    Оператор REST - упаковка элементов в массив
+//    Spread - распаковка массива в отдельные элементы
+    
+//    function testRest(a,b,...c){
+//        console.log(c);
+//    }
+//    testRest(1,2,3,5,7);
+    
+    
+//    const values = [32,43,154,33,87];
+//    console.log(Math.max(...values));
+    
+//    Клонирование свойств массива
+//    let arr = ['one','two'];
+//    let arr2 = ['first',...arr,'second'];
+//    console.log(arr2);
+    let calcSumArgs = (a,b,c,d,...items) =>{
+        let s1 = a + b + c + d;
+        items.forEach(item => s1 += item);
+        return s1;
+    }
+    
+    console.log(calcSumArgs(1,2,3,4,5,6,7,8,9));
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</script>
