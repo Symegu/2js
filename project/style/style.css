@@ -1,0 +1,29 @@
+header {
+    display: flex;
+    height: 30px;
+    padding: 10px 20px;
+    background-color: lightgrey;
+}
+
+.products {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    background-color: #ebebeb;
+}
+
+.img {
+    height: 300px;
+    width: 300px;
+}
+
+.product-price{
+    color: red;
+}
+
+.buy-btn {
+    color: white;
+    background-color: black;
+    width: 100px;
+    height: 30px;
+}
