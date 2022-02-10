@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h2 class="description"> Составь свой бургер </h2>        
+    </header>
+    <main class="main wrap">
+        <div>
+            <div class="option wrap">
+                <h3> Выберите размер бургера :</h3>
+                <div class="input">
+                    <input type="radio" id="smallsize" name="size" value="small" data-price="50" data-calories="20" checked>
+                    <label for="smallsize">Маленький</label>
+                    <input type="radio" id="bigsize" name="size" value="big"data-price="100" data-calories="40">
+                    <label for="bigsize">Большой</label>
+                </div>
+            </div>
+            <div class="option wrap">
+                <h3> Выберите начинку бургера :</h3>
+                <div class="input">
+                    <input type="radio" id="cheezetopping" name="add" value="cheese" data-price="10" data-calories="20">
+                    <label for="cheezetopping">Сыр</label>
+                    <input type="radio" id="saladtopping" name="add" value="salad" data-price="20" data-calories="5">
+                    <label for="saladtopping">Салат</label>
+                    <input type="radio" id="potatotopping" name="add" value="potato" data-price="15" data-calories="10">
+                    <label for="potatotopping">Картофель</label>
+                </div>
+            </div>
+            <div class="option wrap">
+                <h3> Выберите дополнительную опцию :</h3>
+                <div class="input">
+                    <input type="checkbox" id="spiceoption" name="topping" value="spice" data-price="15" data-calories="0">
+                    <label for="spiceoption">Приправа</label>
+                    <input type="checkbox" id="mayooption" name="topping" value="mayo" data-price="20" data-calories="5">
+                    <label for="mayooption">Майонез</label>
+                </div>
+            </div>
+            <button id="check">Собрать бургер</button>
+            <div>
+                <p id="result">Итого :
+                    <span id="price">0</span>
+                    <span id="calories">0</span>
+                </p>
+            </div>
+        </div>
+    </main>
+<script src="js/script.js"></script>
+<script>
+    window.onload = () => {
+        document.getElementById("check").addEventListener('click', () => {
+            let burger = new Burger ('size', 'add', 'topping');
+            console.log(burger);
+            burger.renderSum('#price', '#calories');
+        });
+    }
+</script>
+</body>
+</html>
