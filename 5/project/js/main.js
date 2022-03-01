@@ -11,13 +11,9 @@ const app = new Vue({
         filtered: [],
         imgCatalog: 'https://via.placeholder.com/200x150',
         userSearch: '',
-        show: false
+        imgCart: 'https://via.placeholder.com/50x100'
     },
     methods: {
-        filter(value){
-         const regexp = new RegExp(value, 'i');
-         this.filtered = this.products.filter(product => regexp.test(product.product_name));
-        },
         getJson(url){
             return fetch(url)
                 .then(result => result.json())
